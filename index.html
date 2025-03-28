@@ -88,33 +88,6 @@
 
 </div>
 
-<script>
-    document.getElementById('enquiryForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const formData = new FormData(e.target);
-        const site = formData.get('nearestSite');
-
-        let recipient;
-        if (site === 'melbourne') {
-            recipient = 'kite-enquiries@unimelb.edu.au';
-        } else {
-            recipient = 'other-sites-enquiries@kite-trial.org.au';
-        }
-
-        const subject = encodeURIComponent("Enquiry about Kite Trial participation");
-        const body = encodeURIComponent(
-`Name: ${formData.get('name')}
-Email: ${formData.get('email')}
-Phone: ${formData.get('phone')}
-Nearest Site: ${site}
-Message: ${formData.get('message')}
-Found Via: ${formData.get('howFound')}`
-        );
-
-        window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
-    });
-</script>
-
 <p style="font-size: small; margin-top:20px;">Approved Royal Melbourne Hospital HREC 2023.084</p>
 </body>
 </html>
