@@ -4,88 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Kite Trial - Enquiry Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #eef2f7;
+            background: linear-gradient(120deg, #ffffff 50%, #f2f7fc 50%);
+            color: #333;
             display: flex;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            color: #333;
         }
         .container {
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-            padding: 40px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            padding: 30px;
             max-width: 750px;
             width: 90%;
             text-align: center;
         }
         img {
-            max-width: 160px;
-            margin-bottom: 25px;
-        }
-        h2 {
-            color: #2c3e50;
+            max-width: 200px;
             margin-bottom: 20px;
         }
+        h2 {
+            color: #102a43;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
         p {
-            color: #4a4a4a;
+            color: #334e68;
             line-height: 1.6;
             margin-bottom: 20px;
         }
         .info {
+            background-color: #f0f4f8;
+            border-left: 4px solid #007cb9;
+            padding: 15px;
+            border-radius: 4px;
             text-align: left;
-            background-color: #f7f9fc;
-            border-left: 5px solid #4a90e2;
-            border-radius: 6px;
-            padding: 15px 20px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
         input, select, textarea {
             width: 100%;
             padding: 10px;
             margin-top: 10px;
-            border-radius: 6px;
-            border: 1px solid #ccd6e0;
-            box-sizing: border-box;
+            border-radius: 4px;
+            border: 1px solid #cbd2d9;
+            background-color: #f5f7fa;
             font-size: 14px;
-            background-color: #f8fafc;
+            box-sizing: border-box;
         }
         button {
-            background-color: #4a90e2;
-            color: #ffffff;
+            background-color: #007cb9;
+            color: #fff;
             border: none;
             padding: 12px;
-            border-radius: 6px;
+            border-radius: 4px;
             cursor: pointer;
+            font-weight: 500;
             font-size: 16px;
             margin-top: 20px;
             width: 100%;
         }
         button:hover {
-            background-color: #407ec9;
-        }
-        @media (max-width: 600px) {
-            .container {
-                padding: 25px;
-            }
+            background-color: #005a87;
         }
         .footer {
             font-size: 12px;
-            color: #888;
+            color: #829ab1;
             margin-top: 25px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
 <div class="container">
     <img src="Kite Logo_GH.png" alt="Kite Trial Logo">
-    <h2>The Kite Trial: Investigating A Novel Treatment for Bipolar Depression</h2>
+    <h2>The Kite Trial: Investigating a Novel Treatment for Bipolar Depression</h2>
     <p>The University of Melbourne is researching an innovative treatment for individuals experiencing bipolar depression. Your involvement could contribute to improvements in mental health care for people with bipolar disorder.</p>
 
     <div class="info">
@@ -99,11 +102,11 @@
         <input type="tel" name="phone" placeholder="Phone*" required>
 
         <select name="nearestSite" required>
-            <option value="">Please select your nearest trial site*</option>
-            <option value="Royal Melbourne Hospital, Parkville, Victoria">Royal Melbourne Hospital, Parkville, Victoria</option>
-            <option value="Royal Prince Alfred Hospital, Camperdown, NSW">Royal Prince Alfred Hospital, Camperdown, NSW</option>
-            <option value="Black Dog Institute, Randwick, NSW">Black Dog Institute, Randwick, NSW</option>
-            <option value="University of Adelaide, Adelaide, SA">University of Adelaide, Adelaide, SA</option>
+            <option value="">Select your nearest trial site*</option>
+            <option>Royal Melbourne Hospital, Parkville, Victoria</option>
+            <option>Royal Prince Alfred Hospital, Camperdown, NSW</option>
+            <option>Black Dog Institute, Randwick, NSW</option>
+            <option>University of Adelaide, Adelaide, SA</option>
         </select>
 
         <textarea name="message" placeholder="Message*" required></textarea>
