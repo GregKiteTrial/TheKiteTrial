@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Kite Trial - Enquiry Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        img {
+            max-width: 250px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #6a1b9a;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        button:hover {
+            background-color: #7e57c2;
+        }
+        .info {
+            text-align: left;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <img src="Kite Logo_GH.png" alt="Kite Trial Logo">
+    <h2>The Kite Trial: Investigating Low-Dose Ketamine for Bipolar Depression</h2>
+    <p>The University of Melbourne is researching an innovative treatment for individuals experiencing bipolar depression.</p>
+    <p>Your involvement in this research could contribute to potential improvements in mental health care for people with bipolar disorder.</p>
+
+    <div class="info">
+        <h3>About the Trial</h3>
+        <p>If you, or someone you know, are navigating the challenges of bipolar depression and are interested in participating in a clinical trial that offers a novel treatment approach, we invite you to learn more by filling out the form below or talking to your healthcare provider.</p>
+    </div>
+
+    <form id="enquiryForm">
+        <input type="text" name="name" placeholder="Name*" required>
+        <input type="email" name="email" placeholder="Email*" required>
+        <input type="tel" name="phone" placeholder="Phone*" required>
+
+        <select name="nearestSite" required>
+            <option value="">Please select your nearest trial site*</option>
+            <option value="melbourne">Royal Melbourne Hospital, Parkville, Victoria</option>
+            <option value="sydney">Royal Prince Alfred Hospital, Camperdown, New South Wales</option>
+            <option value="sydney">Black Dog Institute, Randwick, New South Wales</option>
+            <option value="adelaide">University of Adelaide, Adelaide, South Australia</option>
+        </select>
+
+        <textarea name="message" placeholder="Message*" required></textarea>
+        <input type="text" name="howFound" placeholder="How did you find out about the Kite trial?*" required>
+
+        <button type="submit">Submit Enquiry</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const site = formData.get('nearestSite');
+
+        let recipient;
+        if (site === 'melbourne') {
+            recipient = 'kite-enquiries@unimelb.edu.au';
+        } else {
+            recipient = 'other-sites-enquiries@kite-trial.org.au';
+        }
+
+        const subject = encodeURIComponent("Enquiry about Kite Trial participation");
+        const body = encodeURIComponent(
+`Name: ${formData.get('name')}
+Email: ${formData.get('email')}
+Phone: ${formData.get('phone')}
+Nearest Site: ${site}
+Message: ${formData.get('message')}
+Found Via: ${formData.get('howFound')}`
+        );
+
+        window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+    });
+</script>
+
+<p style="font-size: small; margin-top:20px;">Approved Royal Melbourne Hospital HREC 2023.084</p>
+</body>
+</html>
