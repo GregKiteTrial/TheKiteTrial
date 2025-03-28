@@ -9,49 +9,52 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #eef2f7;
             display: flex;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            background: linear-gradient(135deg, #fceabb, #f8b500);
+            color: #333;
         }
         .container {
             background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
             padding: 40px;
-            max-width: 700px;
+            max-width: 750px;
             width: 90%;
             text-align: center;
         }
         img {
-            max-width: 180px;
-            margin-bottom: 20px;
+            max-width: 160px;
+            margin-bottom: 25px;
         }
         h2 {
-            color: #333;
-            margin-bottom: 15px;
+            color: #2c3e50;
+            margin-bottom: 20px;
         }
         p {
-            color: #555;
+            color: #4a4a4a;
             line-height: 1.6;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         .info {
             text-align: left;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 25px;
+            background-color: #f7f9fc;
+            border-left: 5px solid #4a90e2;
+            border-radius: 6px;
+            padding: 15px 20px;
+            margin-bottom: 30px;
         }
         input, select, textarea {
             width: 100%;
-            padding: 12px;
-            margin-top: 12px;
+            padding: 10px;
+            margin-top: 10px;
             border-radius: 6px;
-            border: 1px solid #ccc;
+            border: 1px solid #ccd6e0;
             box-sizing: border-box;
             font-size: 14px;
+            background-color: #f8fafc;
         }
         button {
             background-color: #4a90e2;
@@ -65,12 +68,17 @@
             width: 100%;
         }
         button:hover {
-            background-color: #357ab8;
+            background-color: #407ec9;
         }
         @media (max-width: 600px) {
             .container {
-                padding: 20px;
+                padding: 25px;
             }
+        }
+        .footer {
+            font-size: 12px;
+            color: #888;
+            margin-top: 25px;
         }
     </style>
 </head>
@@ -82,7 +90,7 @@
 
     <div class="info">
         <h3>About the Trial</h3>
-        <p>If you or someone you know is navigating the challenges of bipolar depression and is interested in participating in a clinical trial offering a novel treatment approach, please complete the form below or speak with your healthcare provider.</p>
+        <p>If you or someone you know is experiencing bipolar depression and is interested in participating in a clinical trial offering a novel treatment approach, please complete the enquiry form below or discuss this opportunity with your healthcare provider.</p>
     </div>
 
     <form id="enquiryForm" action="https://formspree.io/f/xnnpbpqy" method="POST">
@@ -106,7 +114,7 @@
         <button type="submit">Submit Enquiry</button>
     </form>
 
-    <p style="font-size: 12px; color: #888; margin-top: 20px;">Approved Royal Melbourne Hospital HREC 2023.084</p>
+    <div class="footer">Approved Royal Melbourne Hospital HREC 2023.084</div>
 </div>
 </body>
 </html>
